@@ -7,9 +7,9 @@ using namespace std;
 
 const int hadron_nmax = 20000;
 
-int dat2tree(void)
+int dat2root(void)
 {
-	ifstream ampt_final("./ana/ampt.dat");
+	ifstream ampt_final("/mnt/c/Users/pjska/github/ampt_dchen/Ampt-v1.26t9b-v2.26t9b/ana/ampt.dat");
 	if(!ampt_final.is_open()) return 1;
 
 	//event-level info
@@ -67,7 +67,7 @@ int dat2tree(void)
 	//read the info form ampt.dat
 	while(!ampt_final.eof()){
 		//event-level info
-		ampt_final>>n_mc_eventid>>temp>>hadron_n>>b>>temp>>temp>>projectile_ela_n>>projectile_inela_n>>target_ela_n>>target_inela_n;
+		ampt_final>>n_mc_eventid>>temp>>hadron_n>>b>>temp>>temp>>projectile_ela_n>>projectile_inela_n>>target_ela_n>>target_inela_n>>temp;
 		if(ampt_final.eof()) break;
 
 		//track-level info
